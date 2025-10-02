@@ -1,0 +1,135 @@
+/* Styling for the navigation header bar on every page */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(235, 235, 207);
+  font-family: "Roboto Mono", monospace;
+}
+
+/* ----------------- HEADER MENU ----------------- */
+
+.logo-img {
+  width: 50px;
+  height: 50px;
+}
+
+.header-box {
+  display: flex;
+  justify-content: space-between;
+  background: rgb(235, 235, 207);
+  width: 100%;
+  padding: 15px 25px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid rgb(227, 227, 193);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.important-group {
+  display: flex;
+  gap: 25px;
+}
+
+.navbar {
+  padding: 10px;
+  border-radius: 1rem;
+  color: rgb(64, 64, 140);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.link-container {
+  font-weight: bolder;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  margin-left: 5px; 
+  margin-right: 5px;
+  padding: 5px;
+}
+
+.nav-item-label {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link, .drop-down li {
+  font-size: 14px;
+  list-style: none;
+  height: 100%;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+.drop-down {
+  position: absolute;
+  display: none;
+  padding: 0.4rem 0.4rem;
+  margin-top: 0.2rem;
+  color: rgb(227, 227, 193);
+  background: rgb(64, 64, 140);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  justify-content: space-between;
+}
+
+.nav-link:hover {
+  background-color: rgb(64, 64, 140);
+  color: rgb(227, 227, 193);
+  border-radius: 0.5rem;
+  transition: background 0.5s;
+  transition: color 0.1s;
+}
+
+.explore .dropdown-icon {
+  font-size: 20px;
+  position: relative;
+  right: -5px;
+  transform: rotate(0deg);
+  transition: 0.4s ease;
+}
+
+.explore:hover .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+.explore:hover .drop-down {
+  display: block;
+}
+
+.drop-down li:hover {
+  background: rgb(64, 64, 140);
+  color: rgb(255, 255, 255);
+  border-radius: 0.5rem;
+}
+
+/* ----------------- SIGN IN ----------------- */
+
+.sign-in {
+  font-family: "Roboto Mono", monospace;
+  cursor: pointer;
+  border-radius: 1rem;
+  border: none;
+  padding: 10px;
+  color: rgb(64, 64, 140);
+  background: rgb(235, 235, 207);
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+  transition: 0.2s ease;
+}
+
+.sign-in:hover {
+  background: rgb(64, 64, 140);
+  color: rgb(235, 235, 207);
+}
