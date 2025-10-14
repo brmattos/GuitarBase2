@@ -1,0 +1,74 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Moderustic:wght@300..800&display=swap');
+
+@keyframes floatDown {
+  from {
+    transform: translateY(-3%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.tuner {
+  animation: floatDown 2s ease-out forwards;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 400px;
+  border: 2px;
+  padding: 60px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 5rem;
+  justify-content: space-between;
+  font-family: "Raleway", sans-serif;
+  color: rgb(115, 83, 58);
+  user-select: none;
+
+  .tuner-display {
+    text-align: center;
+  
+    .note {
+      font-size: 4rem;
+      font-weight: bold;
+    }
+  
+    .freq {
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+  }
+
+  .tuner-gauge {
+    width: 200px;
+    height: 100px;
+    margin: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+  
+    .needle {
+      width: 3px;
+      height: 90px;
+      background: rgb(115, 83, 58);;
+      transform-origin: bottom center;
+      transition: transform 0.1s ease-out;
+      box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+    }
+  }
+  
+  .tuner-btn {
+    padding: 0.6rem 1.8rem;
+    background: rgb(133, 98, 70);
+    border: none;
+    border-radius: 10px;
+    color: rgb(235, 235, 207);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    font-size: 16px;
+  
+    &:hover {
+      transform: scale(1.05);
+      background: rgb(84, 60, 49);
+    }
+  }
+}

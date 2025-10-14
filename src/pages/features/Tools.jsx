@@ -1,11 +1,13 @@
 import '../../styles/features/tools.scss';
 import Metronome from '../../components/tools/Metronome';
+import Tuner from '../../components/tools/Tuner';
 
 function Tools() {
 
   return (
-    <div>
+    <div className="tools-container">
       <Metronome />
+      <Tuner />
     </div>
   );
 }
