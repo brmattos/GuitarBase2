@@ -10,13 +10,14 @@ import Tools from "./pages/features/Tools";
 function App() {
   return (
     <BrowserRouter>
+      <Navbar/>
       <Routes>
-        <Route exact path="/" element={<div><Navbar/><Home/></div>} />
-        <Route exact path="/about" element={<div><Navbar/><About/></div>} />
-        <Route exact path="/learn" element={<div><Navbar/><Learn/></div>} />
-        <Route exact path="/fretboard" element={<div><Navbar/><Fretboard/></div>} />
-        <Route exact path="/library" element={<div><Navbar/><Library/></div>} />
-        <Route exact path="/tools" element={<div><Navbar/><Tools/></div>} />
+        <Route exact path="/" element={<Home/>} />
+        <Route exact path="/about" element={<About/>} />
+        <Route exact path="/learn" element={<Learn/>} />
+        <Route exact path="/fretboard" element={<Fretboard/>} />
+        <Route exact path="/library" element={<Library/>} />
+        <Route exact path="/tools" element={<Tools/>} />
       </Routes>
     </BrowserRouter>
   );
