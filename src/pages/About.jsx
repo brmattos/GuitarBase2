@@ -6,7 +6,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 function About() {
 
   return (
-    <div>
+    <div className="main-container">
       <div className="contact">
         <h1 className="title">Contact Me!</h1>
         <p className="subtitle">Get in Touch</p>
