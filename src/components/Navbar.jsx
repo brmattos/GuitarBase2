@@ -25,7 +25,7 @@ function Navbar() {
       </nav>
       <div className="important-group">
         <button className="sign-in">SIGN IN</button>
-        <img src="../logo.png" className="logo-img" alt="logo" />
+        <img src="images/logo.png" className="logo-img" alt="logo" />
       </div>
     </div>
   )

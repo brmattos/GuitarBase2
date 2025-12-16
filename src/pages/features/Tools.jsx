@@ -1,5 +1,5 @@
 import '../../styles/features/tools.scss';
-import Metronome from '../../components/tools/Metronome';
+import Metronome from '../../components/tools/Metronome'
 import Tuner from '../../components/tools/Tuner';
 
 function Tools() {

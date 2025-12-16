@@ -119,17 +119,17 @@ function Tuner() {
   }, []);
 
   return (
-    <div className="tuner">
-      <div className="tuner-display">
-        <div className="note">{note}</div>
-        <div className="freq">{freq ? `${freq} Hz` : "--"}</div>
+    <div className='tuner'>
+      <div className='tuner-display'>
+        <div className='note'>{note}</div>
+        <div className='freq'>{freq ? `${freq} Hz` : '--'}</div>
       </div>
-      <div className="tuner-gauge">
-        <div className="scale" />
-        <div className="needle" style={{ transform: `rotate(${cents * 0.9}deg)` }} />
+      <div className='tuner-gauge'>
+        <img src='images/tuner-gauge.png' alt='Tuner gauge' className='gauge-img' />
+        <div className='needle' style={{ transform: `translateX(-50%) rotate(${cents * 0.9}deg)` }} />
       </div>
-      <button className="tuner-btn" onClick={toggleTuner}>
-        {isListening ? "STOP" : "START"}
+      <button className='start-stop-btn' onClick={toggleTuner}>
+        {isListening ? 'STOP' : 'START'}
       </button>
     </div>
   );
