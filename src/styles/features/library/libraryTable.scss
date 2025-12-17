@@ -1,10 +1,30 @@
 .table-body {
   width: 92%;
-  max-height: calc(80% - 0.16rem);
+  max-height: 98%;
   margin-top: 2rem;
   overflow: auto;
   border-radius: 2rem;
   background: rgb(86, 60, 35);
+
+  scrollbar-width: thin;
+  scrollbar-color: rgba(235, 235, 207, 0.4) transparent;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(235, 235, 207, 0.4);
+    border-radius: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(235, 235, 207, 0.6);
+  }
 
   table {
     width: 96%;
