@@ -1,0 +1,82 @@
+.container {
+  font-family: "Poppins", sans-serif;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(88, 61, 41);
+  background: rgb(235, 235, 207);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  padding: 2rem 4rem;
+  border-radius: 3rem;
+  text-align: center;
+  margin: 80px;
+
+  .title {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+  .subtitle {
+    font-size: 1.2rem;
+    color: rgba(88, 61, 41, 0.65);
+  }
+}
+
+.feature-group {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; 
+  gap: 2rem;
+  margin: 3rem 0;
+
+  .feature-container {
+    animation: floatUp 1s ease-out forwards;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    width: 400px;
+    border-radius: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    background: rgb(235, 235, 207);
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 1.5rem;
+      cursor: pointer;
+      margin-bottom: 1rem;
+    }
+
+    .tools-img {
+      width: 200px;
+      height: 200px;
+    }
+
+    .feature-title {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: rgb(64, 64, 140);
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      transition: 0.3s;
+      width: 100%;
+      padding: 0.3rem 0.5rem;
+
+      &:hover {
+        background: rgb(64, 64, 140);
+        color: rgb(235, 235, 207);
+        border-radius: 1rem;
+      }
+    }
+
+    .description {
+      font-size: 0.8rem;
+      color: rgba(88, 61, 41, 0.65);
+      line-height: 1.4;
+    }
+  }
+}
