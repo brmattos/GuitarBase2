@@ -26,17 +26,27 @@ export const doSignInWithEmailAndPassword = (email, password) => {
 };
 
 export const doSignInWithGoogle = async () => {
-  const provider = new GoogleAuthProvider();
-  const result = await signInWithPopup(auth, provider);
-  const user = result.user;
-  await setDoc(doc(db, 'users', user.uid), {
-    uid: user.uid,
-    email: user.email,
-    displayName: user.displayName,
-    photoURL: user.photoURL || null,
-    lastLogin: serverTimestamp(),
-  }, { merge: true });  // (merge if user exists)
-  return result
+  try {
+    const provider = new GoogleAuthProvider();
+    const result = await signInWithPopup(auth, provider);
+    const user = result.user;
+    await setDoc(
+      doc(db, 'users', user.uid),
+      {
+        uid: user.uid,
+        email: user.email,
+        displayName: user.displayName,
+        photoURL: user.photoURL ?? null,
+        lastLogin: serverTimestamp(),
+      },
+      { merge: true }
+    );
+
+    return result;
+  } catch (error) {
+    console.error('Google sign-in error:', error);
+    throw error;
+  }
 };
 
 export const doSignOut = () => {

@@ -47,7 +47,7 @@ function Navbar() {
         <button className='sign-in' onClick={handleAuthButton}>
           {userLoggedIn ? 'LOG OUT' : 'LOGIN'}
         </button>
-        <img src='images/logo.png' className='logo-img' alt='logo' />
+        <img src='images/favicon.png' className='logo-img' alt='logo' />
       </div>
     </div>
   );

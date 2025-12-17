@@ -52,33 +52,6 @@ const LibraryRow = ({ song, setLibrary }) => {
     setLibrary((prev) => prev.filter((s) => s.id !== song.id));
   };
 
-  const playOnSpotify = async () => {
-    if (!localSong.song || !localSong.artist) return;
-    try {
-      // Get token from backend
-      const tokenRes = await fetch('/api/spotify-token');
-      const data = await tokenRes.json();
-      const token = data.access_token;
-
-      // Search track
-      const query = encodeURIComponent(`${localSong.song} ${localSong.artist}`);
-      const trackRes = await fetch(
-        `https://api.spotify.com/v1/search?q=${query}&type=track&limit=1`,
-        { headers: { Authorization: `Bearer ${token}` } }
-      );
-      const trackData = await trackRes.json();
-
-      if (trackData.tracks.items.length > 0) {
-        const trackId = trackData.tracks.items[0].id;
-        window.open(`https://open.spotify.com/track/${trackId}`, '_blank');
-      } else {
-        alert('Track not found on Spotify.');
-      }
-    } catch (err) {
-      console.error('Spotify playback error:', err);
-    }
-  };
-
   return (
     <tr>
       <td>
@@ -109,7 +82,7 @@ const LibraryRow = ({ song, setLibrary }) => {
           <OpenInNewIcon className="td-icon" />
         </a>
       </td>
-      <td><PlayCircleIcon className='td-icon' onClick={playOnSpotify} /></td>
+      <td><PlayCircleIcon className='td-icon' /></td>
       <td><DeleteIcon className='td-icon' onClick={deleteEntry} /></td>
     </tr>
   );
