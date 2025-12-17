@@ -74,6 +74,7 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 0.5rem;
     justify-content: space-between;
+    z-index: 1;
   }
 
   .nav-link:hover {

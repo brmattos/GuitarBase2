@@ -1,0 +1,22 @@
+@keyframes floatDown {
+  from {
+    transform: translateY(-3%);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+body {
+  font-family: "Roboto Mono", monospace;
+  background: rgb(235, 235, 207);
+  user-select: none;
+}
+
+.help-text {
+  display: flex;
+  margin-top: 35px;
+  justify-content: center;
+}
