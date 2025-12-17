@@ -1,6 +1,7 @@
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { AuthProvider } from './contexts/authContext';
 import Navbar from "./components/Navbar";
+import ProtectedRoute from "./components/ProtectedRoute";
 import Login from './pages/auth/Login';
 import Register from "./pages/auth/Register";
 import Home from "./pages/Home";
@@ -20,9 +21,9 @@ function App() {
           <Route exact path='/login' element={<Login />} />
           <Route exact path='/register' element={<Register />} />
           <Route exact path='/about' element={<About />} />
-          <Route exact path='/learn' element={<Learn />} />
+          <Route exact path='/learn' element={<ProtectedRoute><Learn /></ProtectedRoute>} />
           <Route exact path='/fretboard' element={<Fretboard />} />
-          <Route exact path='/library' element={<Library />} />
+          <Route exact path='/library' element={<ProtectedRoute><Library /></ProtectedRoute>}/>
           <Route exact path='/tools' element={<Tools />} />
         </Routes>
       </AuthProvider>
