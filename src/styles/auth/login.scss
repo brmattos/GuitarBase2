@@ -1,0 +1,148 @@
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.login-card {
+  width: 24rem;
+  padding: 1rem;
+  text-align: center;
+  color: rgb(53, 34, 16);;
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.login-header h3 {
+  color: rgb(53, 34, 16);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    label {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: rgb(53, 34, 16);
+      margin-bottom: 0.25rem;
+    }
+
+    input {
+      font-family: Arial, Helvetica, sans-serif;
+      padding: 0.5rem 0.75rem;
+      border: 1px solid #d1d5db;
+      border-radius: 0.5rem;
+      outline: none;
+      font-size: 1rem;
+      color: rgb(53, 34, 16);
+      background: transparent;
+      transition: border-color 0.3s;
+
+      &:focus {
+        border-color: #4f46e5;
+        box-shadow: 0 0 0 1px #4f46e5;
+      }
+    }
+  }
+}
+
+.error {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+  background-color: #4f46e5;
+  border: none;
+
+  &:hover {
+    background-color: #4338ca;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  &.disabled {
+    background-color: #d1d5db;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+}
+
+.register-text {
+  font-size: 0.875rem;
+
+  a {
+    font-weight: 700;
+    text-decoration: underline;
+  }
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  margin: 0.625rem 0;
+
+  span {
+    font-weight: 700;
+    font-size: 0.875rem;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background-color: #d1d5db;
+  }
+}
+
+.btn-google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.625rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  background: #F3F3F3;
+  transition: all 0.3s;
+
+  &:hover {
+    background: #e1e1e1;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+  }
+
+  .google-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}

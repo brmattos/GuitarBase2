@@ -1,5 +1,8 @@
 import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { AuthProvider } from './contexts/authContext';
 import Navbar from "./components/Navbar";
+import Login from './pages/auth/Login';
+import Register from "./pages/auth/Register";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Learn from "./pages/Learn";
@@ -10,15 +13,19 @@ import Tools from "./pages/features/Tools";
 function App() {
   return (
     <BrowserRouter>
-      <Navbar/>
-      <Routes>
-        <Route exact path="/" element={<Home/>} />
-        <Route exact path="/about" element={<About/>} />
-        <Route exact path="/learn" element={<Learn/>} />
-        <Route exact path="/fretboard" element={<Fretboard/>} />
-        <Route exact path="/library" element={<Library/>} />
-        <Route exact path="/tools" element={<Tools/>} />
-      </Routes>
+      <AuthProvider>
+        <Navbar />
+        <Routes>
+          <Route exact path='/' element={<Home />} />
+          <Route exact path='/login' element={<Login />} />
+          <Route exact path='/register' element={<Register />} />
+          <Route exact path='/about' element={<About />} />
+          <Route exact path='/learn' element={<Learn />} />
+          <Route exact path='/fretboard' element={<Fretboard />} />
+          <Route exact path='/library' element={<Library />} />
+          <Route exact path='/tools' element={<Tools />} />
+        </Routes>
+      </AuthProvider>
     </BrowserRouter>
   );
 }
