@@ -1,4 +1,4 @@
-import '../../styles/features/fretboard/settings-panel.scss';
+import '../../styles/features/fretboard/settingsPanel.scss';
 import React from 'react';
 
 export default function SettingsPanel({

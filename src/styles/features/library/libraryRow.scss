@@ -1,0 +1,82 @@
+.favorite {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.45);
+  transition: 0.1s ease;
+
+  &:hover {
+    color: gold;
+  }
+}
+
+.status {
+  font-size: 12x;
+  border-radius: 1rem;
+  padding: 0.6rem;
+  border: none;
+  color: rgb(235, 235, 207);
+  cursor: pointer;
+  text-align: center;
+  transition: 0.3s ease;
+  width: 100px;
+
+  &#not-learned {
+    background: rgb(184, 34, 34);
+    &:hover { background: rgb(206, 64, 64);}
+  }
+
+  &#in-progress {
+    background: rgb(64, 64, 140);
+    &:hover { background: rgb(80, 80, 171); }
+  }
+
+  &#learned {
+    background: rgb(31, 139, 31);
+    &:hover { background: rgb(41, 167, 41); }
+  }
+}
+
+.favorite, .status, .td-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.song, .artist, .tuning {
+  user-select: text;
+  width: auto;
+  border: none;
+  background: rgb(70, 47, 27);
+  border-radius: 0.2rem;
+  color: rgb(235, 235, 207);
+  font-size: 15px;
+  padding: 0.6rem 0.5rem;
+  outline: none;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.song::placeholder,
+.artist::placeholder,
+.tuning::placeholder {
+  color: rgb(235, 235, 207);
+  opacity: 0.4;
+}
+
+.td-icon {
+  color: rgba(235, 235, 207, 0.2);
+  cursor: pointer;
+
+  &:hover {
+    color: rgba(235, 235, 207, 0.8);
+    transition: 0.3s ease;
+  }
+}
+
+.material-symbols-outlined.play,
+.material-symbols-outlined.del {
+  cursor: pointer;
+}
+
+.material-symbols-outlined.del:hover {
+  color: rgb(184, 34, 34);
+}

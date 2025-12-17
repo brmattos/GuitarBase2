@@ -1,0 +1,30 @@
+.library-container {
+  font-family: "Poppins", sans-serif;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 70vw;
+  height: calc(100vh - 115px);
+  box-shadow: 0 0 9px rgba(0, 0, 0, 0.2);
+  border-radius: 1rem 1rem 0 0;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.add-btn {
+  border-radius: 2rem;
+  color: rgb(235, 235, 207);
+  background: rgb(86, 60, 35);
+  border: none;
+  width: 80%;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  margin: 1rem 0;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    background: rgb(70, 47, 27);
+  }
+}
