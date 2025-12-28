@@ -12,7 +12,7 @@ function Home() {
       </div>
       <div class="feature-group">
         <div class="feature-container" onClick={() => navigate("/fretboard")}>
-          <img src="images/fretboard.jpg" class="fretboard-img" alt="fretboard" />
+          <img src="images/fretboard.jpg" class="fretboard-img" alt="fretboard" loading="lazy" />
           <p class="feature-title">Interactive Fretboard</p>
           <p class="description">
             Exploring tunings, experiment with different notes and chords,
@@ -21,7 +21,7 @@ function Home() {
           </p>
         </div>
         <div class="feature-container" onClick={() => navigate("/library")}>
-          <img src="images/library.png" class="library-img" alt="library" />
+          <img src="images/library.png" class="library-img" alt="library" loading="lazy" />
           <p class="feature-title">Library</p>
           <p class="description">
             Organize and manage your guitar learning with a personalized, intuitive 
@@ -29,7 +29,7 @@ function Home() {
           </p>
         </div>
         <div class="feature-container" onClick={() => navigate("/tools")}>
-          <img src="images/tools.png" class="tools-img" alt="tools" />
+          <img src="images/tools.png" class="tools-img" alt="tools" loading="lazy" />
           <p class="feature-title">Tools</p>
           <p class="description">
             Elevate your practice with our integrated metronome. Whether locking in a steady 
