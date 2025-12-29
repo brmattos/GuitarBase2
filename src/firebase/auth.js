@@ -6,6 +6,8 @@ import {
   sendPasswordResetEmail,
   sendEmailVerification,
   updatePassword,
+  fetchSignInMethodsForEmail,
+  linkWithPopup,
   signInWithPopup,
   GoogleAuthProvider,
   GithubAuthProvider,
@@ -51,8 +53,8 @@ export const doSignInWithGoogle = async () => {
 };
 
 export const doSignInWithGithub = async () => {
+  const provider = new GithubAuthProvider();
   try {
-    const provider = new GithubAuthProvider();
     const result = await signInWithPopup(auth, provider);
     const user = result.user;
     await setDoc(
@@ -69,8 +71,20 @@ export const doSignInWithGithub = async () => {
 
     return result;
   } catch (error) {
-    console.error('Github sign-in error: ', error);
-    throw error;
+    if (error.code === 'auth/account-exists-with-different-credential') {
+      // Handle existing login, link accounts
+      const email = error.customData.email;
+      const methods = await fetchSignInMethodsForEmail(auth, email);
+      if (methods.includes('google.com')) {
+        const googleProvider = new GoogleAuthProvider();
+        const result = await signInWithPopup(auth, googleProvider);
+        await linkWithPopup(result.user, provider);
+        return result;
+      }
+    } else {
+      console.error('Github sign-in error: ', error);
+      throw error;
+    }
   }
 };
 
