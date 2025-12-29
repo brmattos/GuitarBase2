@@ -8,6 +8,7 @@ import {
   updatePassword,
   signInWithPopup,
   GoogleAuthProvider,
+  GithubAuthProvider,
 } from 'firebase/auth';
 
 export const doCreateUserWithEmailAndPassword = async (email, password) => {
@@ -44,7 +45,31 @@ export const doSignInWithGoogle = async () => {
 
     return result;
   } catch (error) {
-    console.error('Google sign-in error:', error);
+    console.error('Google sign-in error: ', error);
+    throw error;
+  }
+};
+
+export const doSignInWithGithub = async () => {
+  try {
+    const provider = new GithubAuthProvider();
+    const result = await signInWithPopup(auth, provider);
+    const user = result.user;
+    await setDoc(
+      doc(db, 'users', user.uid),
+      {
+        uid: user.uid,
+        email: user.email,
+        displayName: user.displayName,
+        photoURL: user.photoURL ?? null,
+        lastLogin: serverTimestamp(),
+      },
+      { merge: true }
+    );
+
+    return result;
+  } catch (error) {
+    console.error('Github sign-in error: ', error);
     throw error;
   }
 };
@@ -63,6 +88,6 @@ export const doPasswordChange = (password) => {
 
 export const doSendEmailVerification = () => {
   return sendEmailVerification(auth.currentUser, {
-    url: `${window.location.origin}/home`,
+    url: `${window.location.origin}/`,
   });
 };

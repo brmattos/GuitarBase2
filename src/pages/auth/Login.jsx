@@ -4,6 +4,7 @@ import { useAuth } from '../../contexts/authContext';
 import {
   doSignInWithEmailAndPassword,
   doSignInWithGoogle,
+  doSignInWithGithub
 } from '../../firebase/auth';
 import '../../styles/auth/login.scss'
 
@@ -52,11 +53,17 @@ const Login = () => {
     e.preventDefault();
     if (!isSigningIn) {
       setIsSigningIn(true);
-      doSignInWithGoogle().catch((err) => {
-        setIsSigningIn(false);
-      });
+      doSignInWithGoogle().catch(_ => setIsSigningIn(false));
     }
   };
+
+  const onGithubSignIn = (e) => {
+    e.preventDefault();
+    if (!isSigningIn) {
+      setIsSigningIn(true);
+      doSignInWithGithub().catch(_ => setIsSigningIn(false))
+    }
+  }
 
   return (
     <>
@@ -108,13 +115,22 @@ const Login = () => {
             <span>OR</span>
           </div>
 
-          <button
-            disabled={isSigningIn}
-            onClick={onGoogleSignIn}
-            className={`btn-google ${isSigningIn ? 'disabled' : ''}`}>
-            <img src='images/google-icon.png' alt='google icon' className='google-icon' />
-            {isSigningIn ? 'Signing In...' : 'Continue with Google'}
-          </button>
+          <div className="auth-container">
+            <button
+              disabled={isSigningIn}
+              onClick={onGoogleSignIn}
+              className={`sign-btn ${isSigningIn ? 'disabled' : ''}`}>
+              <img src='images/google-icon.png' alt='google icon' className='icon' />
+              {isSigningIn ? 'Signing In...' : 'Continue with Google'}
+            </button>
+            <button
+              disabled={isSigningIn}
+              onClick={onGithubSignIn}
+              className={`sign-btn ${isSigningIn ? 'disabled' : ''}`}>
+              <img src='images/github-icon.png' alt='github icon' className='icon' />
+              {isSigningIn ? 'Signing In...' : 'Continue with Github'}
+            </button>
+          </div>
         </div>
       </main>
     </>
